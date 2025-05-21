@@ -35,7 +35,7 @@ export const contents: Content[] = [
     list: [
       {
         title: "Introduction",
-        href: "/docs/introduction",
+        href: "/docs",
         icon: () => (
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -114,12 +114,13 @@ export const contents: Content[] = [
             xmlns="http://www.w3.org/2000/svg"
             width="1.2em"
             height="1.2em"
-            viewBox="0 0 20 20"
+            viewBox="0 0 24 24"
           >
             <path
               fill="currentColor"
               fillRule="evenodd"
-              d="M14.122 4.682c1.35 0 2.781.743 3.8 2.028c-3.34 1.851-2.797 6.674.578 7.963c-.465 1.04-.687 1.505-1.285 2.426c-.835 1.284-2.01 2.884-3.469 2.898c-1.295.012-1.628-.853-3.386-.843c-1.758.01-2.125.858-3.42.846c-1.458-.014-2.573-1.458-3.408-2.743C1.198 13.665.954 9.45 2.394 7.21C3.417 5.616 5.03 4.683 6.548 4.683c1.545 0 2.516.857 3.794.857c1.24 0 1.994-.858 3.78-.858M13.73 0c.18 1.215-.314 2.405-.963 3.247c-.695.902-1.892 1.601-3.05 1.565c-.21-1.163.332-2.36.99-3.167C11.43.755 12.67.074 13.73 0"
+              d="M3.172 5.172C2 6.343 2 8.229 2 12c0 3.771 0 5.657 1.172 6.828C4.343 20 6.229 20 10 20h4c3.771 0 5.657 0 6.828-1.172C22 17.657 22 15.771 22 12c0-3.771 0-5.657-1.172-6.828C19.657 4 17.771 4 14 4h-4C6.229 4 4.343 4 3.172 5.172M8 13a1 1 0 1 0 0-2a1 1 0 0 0 0 2m5-1a1 1 0 1 1-2 0a1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2a1 1 0 0 0 0 2"
+              clipRule="evenodd"
             />
           </svg>
         ),
@@ -132,12 +133,13 @@ export const contents: Content[] = [
             xmlns="http://www.w3.org/2000/svg"
             width="1.2em"
             height="1.2em"
-            viewBox="0 0 20 20"
+            viewBox="0 0 24 24"
           >
             <path
               fill="currentColor"
               fillRule="evenodd"
-              d="M14.122 4.682c1.35 0 2.781.743 3.8 2.028c-3.34 1.851-2.797 6.674.578 7.963c-.465 1.04-.687 1.505-1.285 2.426c-.835 1.284-2.01 2.884-3.469 2.898c-1.295.012-1.628-.853-3.386-.843c-1.758.01-2.125.858-3.42.846c-1.458-.014-2.573-1.458-3.408-2.743C1.198 13.665.954 9.45 2.394 7.21C3.417 5.616 5.03 4.683 6.548 4.683c1.545 0 2.516.857 3.794.857c1.24 0 1.994-.858 3.78-.858M13.73 0c.18 1.215-.314 2.405-.963 3.247c-.695.902-1.892 1.601-3.05 1.565c-.21-1.163.332-2.36.99-3.167C11.43.755 12.67.074 13.73 0"
+              d="M3.172 5.172C2 6.343 2 8.229 2 12c0 3.771 0 5.657 1.172 6.828C4.343 20 6.229 20 10 20h4c3.771 0 5.657 0 6.828-1.172C22 17.657 22 15.771 22 12c0-3.771 0-5.657-1.172-6.828C19.657 4 17.771 4 14 4h-4C6.229 4 4.343 4 3.172 5.172M8 13a1 1 0 1 0 0-2a1 1 0 0 0 0 2m5-1a1 1 0 1 1-2 0a1 1 0 0 1 2 0m3 1a1 1 0 1 0 0-2a1 1 0 0 0 0 2"
+              clipRule="evenodd"
             />
           </svg>
         ),
@@ -171,23 +173,23 @@ export const contents: Content[] = [
       // },
       {
         title: "Langchain",
-        icon: Icons.astro,
+        icon: Icons.langchain,
         href: "/docs/integrations/langchain",
       },
 
       {
         title: "LiteLLM",
-        icon: Icons.remix,
+        icon: Icons.liteLLM,
         href: "/docs/integrations/litellm",
       },
       {
         title: "Portkey",
-        icon: Icons.nextJS,
+        icon: Icons.portkey,
         href: "/docs/integrations/portkey",
       },
       {
         title: "LlamaIndex",
-        icon: Icons.nuxt,
+        icon: Icons.llamaIndex,
         href: "/docs/integrations/llamaindex",
       },
     ],
@@ -225,17 +227,22 @@ export const cookbooks: Content[] = [
       {
         title: "Overview",
         href: "/docs/cookbooks",
-        icon: Icons.astro,
+        icon: Icons.book,
       },
       {
         title: "Starter Guide",
         href: "/docs/cookbooks/starter-guide",
-        icon: Icons.astro,
+        icon: Icons.book,
       },
       {
         title: "Sutra with Agno",
         href: "/docs/cookbooks/agno",
-        icon: Icons.astro,
+        icon: Icons.book,
+      },
+      {
+        title: "Sutra with LangChain",
+        href: "/docs/cookbooks/sutra-with-langchain",
+        icon: Icons.book,
       },
     ],
   },

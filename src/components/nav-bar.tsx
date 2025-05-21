@@ -103,7 +103,7 @@ export const Navbar = () => {
 
 export const navMenu = [
   {
-    name: "Home",
+    name: "home",
     path: "/",
   },
   {
@@ -112,7 +112,11 @@ export const navMenu = [
   },
   {
     name: "cookbooks",
-    path: "/cookbooks",
+    path: "/docs/cookbooks",
+  },
+  {
+    name: "api reference",
+    path: "/docs/api-reference",
   },
   {
     name: "community",

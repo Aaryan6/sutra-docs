@@ -65,28 +65,6 @@ export default function Hero() {
       <div className="overflow-hidden bg-transparent md:px-10 dark:-mb-32 dark:mt-[-4.75rem] dark:pb-32 dark:pt-[4.75rem]">
         <div className="lg:max-w-8xl mx-auto grid max-w-full grid-cols-1 items-center gap-x-8 gap-y-16 px-4 py-2 lg:grid-cols-2 lg:px-8 lg:py-4 xl:gap-x-16 xl:px-12">
           <div className="relative z-10 md:text-center lg:text-left">
-            {/* <div className="max-w-7xl mx-auto">
-
-<div className="max-w-3xl mr-auto">
-
-			<h1 className="text-4xl font-bold">
-SUTRA: Simplifying Multilingual AI for Developers
-</h1>
-<p className="mt-4 text-lg text-gray-400">
-  SUTRA is a family of large multilingual language models (LMLMs) developed by TWO AI.
-</p>
-</div>
-<div className="mt-6 flex items-center gap-4">
-  <code className="bg-black text-green-400 px-3 py-2 rounded">
-    pip install  openai
-  </code>
-  <a href="/docs/quickstart" className="btn btn-primary">Get Started</a>
-  <a href="https://playground.two.ai" className="btn btn-secondary">Playground</a>
-</div>
-<div className="mt-4">
-  <img src="https://img.shields.io/badge/Featured_on-YC-orange?logo=ycombinator" alt="YC Badge" />
-</div>
-			</div> */}
             <div className="relative">
               <h1 className="text-4xl font-bold">
                 SUTRA: Simplifying Multilingual AI for Developers
@@ -105,7 +83,6 @@ SUTRA: Simplifying Multilingual AI for Developers
                     >
                       Get Started
                     </Link>
-                    <Builder />
                   </div>
                 </>
               }
@@ -264,8 +241,7 @@ function CodePreview() {
                 </motion.div>
                 <motion.div layout className="self-end">
                   <Link
-                    href="https://demo.better-auth.com"
-                    target="_blank"
+                    href="/docs/getting-started"
                     className="shadow-md  border shadow-primary-foreground mb-4 ml-auto mr-4 mt-auto flex cursor-pointer items-center gap-2 px-3 py-1 transition-all ease-in-out hover:opacity-70"
                   >
                     <svg

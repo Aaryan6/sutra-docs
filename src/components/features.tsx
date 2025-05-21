@@ -1,5 +1,6 @@
 "use client";
 
+import { LockClosedIcon } from "@radix-ui/react-icons";
 import {
   ExternalLink,
   Globe2Icon,
@@ -10,65 +11,59 @@ import {
   ShieldCheckIcon,
   Webhook,
 } from "lucide-react";
-import { LockClosedIcon } from "@radix-ui/react-icons";
 
-import { TechStackDisplay } from "./display-techstack";
-import { Ripple } from "./ripple";
-import { GithubStat } from "./github-stat";
 import { cn } from "@/lib/utils";
-import { Testimonial } from "./landing/people-say";
 import Link from "next/link";
+import { GithubStat } from "./github-stat";
+import { Ripple } from "./ripple";
+import IntegrationsSection from "./landing/integrations";
 const features = [
   {
     id: 1,
-    label: "Multilingual Support",
-    title: "Support for popular <strong>languages</strong>.",
+    title: "COOKBOOKS",
     description:
-      "Supports popular languages, including Hindi, Sanskrit, Tamil, Telugu, Kannada, Malayalam, and more.",
+      "Explore our collection of cookbooks to kickstart your projects with practical examples and templates.",
     icon: PlugZap2Icon,
-    href: "/docs",
+    href: "https://github.com/sutra-dev/sutra-cookbook",
   },
   {
     id: 2,
-    label: "Cookbooks",
-    title: "Starter <strong>Guides</strong>.",
-    description: "Build your own AI applications with our starter guides.",
-    icon: LockClosedIcon,
-    href: "/cookbooks",
-  },
-  {
-    id: 3,
-    label: "Get API Key",
-    title: "Get your <strong>API Key</strong>.",
-    description: "Get your API Key to start building your own AI applications.",
-    icon: Webhook,
+    title: "PLAYGROUND",
+    description:
+      "Experiment with our tools and features in an interactive playground designed for developers.",
+    icon: PlugIcon,
     href: "/docs",
   },
   {
-    id: 4,
-    label: "Community",
-    title: "Join our <strong>Community</strong>.",
+    id: 3,
+    title: "API KEY",
     description:
-      "Join our community to get help and support from our team and other users.",
+      "Generate and manage your API keys to securely integrate with our services and unlock full functionality.",
+    icon: Webhook,
+    href: "https://www.two.ai/#platforms-intro",
+  },
+  {
+    id: 4,
+    title: "MULTILINGUAL SUPPORT",
+    description:
+      "Reach a global audience with built-in support for multiple languages in your applications.",
     icon: ShieldCheckIcon,
     href: "/docs",
   },
   {
     id: 5,
-    label: "Documentation",
-    title: "Read our <strong>Documentation</strong>.",
-    description: "Read our documentation to get started with our API.",
-
-    icon: RabbitIcon,
-    href: "/docs",
+    title: "CHATSUTRA",
+    description:
+      "India’s AI Assistant by TWO AI, supporting 50+ languages for seamless multilingual conversations.",
+    icon: LockClosedIcon,
+    href: "https://chat.two.ai/",
   },
-
   {
     id: 6,
-    label: "Resources",
-    title: "Explore our <strong>Resources</strong>.",
-    description: "Explore our resources to get started with our API.",
-    icon: PlugIcon,
+    title: "API REFERENCE",
+    description:
+      "Dive into our comprehensive API reference to understand endpoints, parameters, and responses in detail.",
+    icon: RabbitIcon,
     href: "/docs",
   },
 ];
@@ -90,12 +85,12 @@ export default function Features({ stars }: { stars: string | null }) {
                 index >= 3 && "md:border-t-[1.2px]"
               )}
             >
-              <div className="flex items-center gap-2 my-1">
+              {/* <div className="flex items-center gap-2 my-1">
                 <feature.icon className="w-4 h-4" />
                 <p className="text-gray-600 dark:text-gray-400">
                   {feature.label}
                 </p>
-              </div>
+              </div> */}
               <div className="mt-2">
                 <div className="max-w-full">
                   <div className="flex gap-3 ">
@@ -109,13 +104,11 @@ export default function Features({ stars }: { stars: string | null }) {
                 </div>
                 <p className="mt-2 text-sm text-left text-muted-foreground">
                   {feature.description}
-                  <a className="ml-2 underline" href="/docs" target="_blank">
-                    Learn more
-                  </a>
                 </p>
                 <div className="pt-3">
                   <Link
                     href={feature.href}
+                    target={feature.href.includes("http") ? "_blank" : "_self"}
                     className="underline mt-3 text-foreground/80 flex items-center gap-2"
                   >
                     Learn more <ExternalLink className="w-4 h-4" />
@@ -125,6 +118,7 @@ export default function Features({ stars }: { stars: string | null }) {
             </div>
           ))}
         </div>
+        <IntegrationsSection />
         <div className="relative col-span-3 border-t-[1.2px] border-l-[1.2px] md:border-b-[1.2px] dark:border-b-0  h-full py-20">
           <div className="w-full h-full p-16 pt-10 md:px-10">
             <div className="flex flex-col items-center justify-center w-full h-full gap-3">
@@ -135,7 +129,10 @@ export default function Features({ stars }: { stars: string | null }) {
                 </p>
               </div>
               <p className="max-w-md mx-auto mt-4 text-4xl font-normal tracking-tighter text-center md:text-4xl">
-                <strong>Roll your own auth with confidence in minutes!</strong>
+                <strong>
+                  Power your AI with multilingual capabilities across 50+
+                  languages!
+                </strong>
               </p>
               <div className="flex mt-[10px] z-20 justify-center items-start">
                 {/* <TechStackDisplay skills={["Langchain", "OpenAI", "aiSDK"]} /> */}

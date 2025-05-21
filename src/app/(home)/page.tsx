@@ -39,14 +39,14 @@ export default async function HomePage() {
                 </span>
                 <span className=" text-zinc-400 hidden md:block">|</span>
                 <Link
-                  href="https://better-auth.build"
+                  href="https://www.two.ai/#platforms-intro"
                   className="font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 hidden dark:hover:text-blue-300 transition-colors md:block"
                 >
                   Get your API Key →
                 </Link>
               </span>
               <Link
-                href="https://better-auth.build"
+                href="https://www.two.ai/#platforms-intro"
                 className="font-semibold text-blue-600 dark:text-blue-400 hover:text-blue-700 text-xs dark:hover:text-blue-300 transition-colors md:hidden"
               >
                 Get your API Key →
