@@ -6,9 +6,20 @@ title: SUTRA
 
 # SUTRA VS OpenAI Models
 
-<img src="https://play-lh.googleusercontent.com/_O9p4Z4yucA2NLmZBu9mTJCuBwXeT9NcbtrDN6I8gKlkIPRySV0adOmbyipjSj9Gew" width="150"/>
+<img
+  src="https://sutra-docs.vercel.app/_next/image?url=%2Fsutra.png&w=256&q=75"
+  width="150"
+/>
 
-<a href="https://colab.research.google.com/drive/175pEoGuZX_6s2lxzXiiT4lYS76QIdg-k?usp=sharing" target="_parent"><img src="https://colab.research.google.com/assets/colab-badge.svg" alt="Open In Colab"/></a>
+<a
+  href="https://colab.research.google.com/drive/175pEoGuZX_6s2lxzXiiT4lYS76QIdg-k?usp=sharing"
+  target="_parent"
+>
+  <img
+    src="https://colab.research.google.com/assets/colab-badge.svg"
+    alt="Open In Colab"
+  />
+</a>
 
 ## Introduction
 
@@ -46,12 +57,10 @@ First, let's install the necessary libraries and set up our environment.
 colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;}"
 id="J5er0RGw56ip" outputId="3c159bb9-bffb-4fec-aa56-a0a3c137cd5f">
 
-``` python
+```python
 # Install required packages
 !pip install openai requests pandas matplotlib seaborn
 ```
-
-
 
 </div>
 
@@ -63,7 +72,7 @@ id="J5er0RGw56ip" outputId="3c159bb9-bffb-4fec-aa56-a0a3c137cd5f">
 
 <div class="cell code" id="install-packages">
 
-``` python
+```python
 # Import necessary libraries
 import os
 import time
@@ -89,7 +98,7 @@ OpenAI.
 
 <div class="cell code" id="api-keys">
 
-``` python
+```python
 # Get API key from Colab secrets
 os.environ["SUTRA_API_KEY"] = userdata.get('SUTRA_API_KEY')
 os.environ["OPENAI_API_KEY"] = userdata.get('OPENAI_API_KEY')
@@ -105,7 +114,7 @@ os.environ["OPENAI_API_KEY"] = userdata.get('OPENAI_API_KEY')
 
 <div class="cell code" id="fzIZRpcBQT4T">
 
-``` python
+```python
 # Create clients for both APIs
 sutra_client = OpenAI(
     base_url="https://api.two.ai/v2",
@@ -130,7 +139,7 @@ their responses.
 
 <div class="cell code" id="model-functions">
 
-``` python
+```python
 def get_sutra_response(prompt, temperature=0, max_tokens=1024):
     """
     Get a response from Sutra V2.
@@ -256,7 +265,7 @@ colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&qu
 id="general-knowledge-test"
 outputId="51089d8e-c9f5-4870-d4e8-68f89974356a">
 
-``` python
+```python
 general_knowledge_prompts = [
     "What is the capital of France and what are some famous landmarks there?",
     "Explain the process of photosynthesis in simple terms.",
@@ -269,8 +278,6 @@ for prompt in general_knowledge_prompts:
     result = compare_responses(prompt)
     general_knowledge_results.append(result)
 ```
-
-
 
 </div>
 
@@ -287,7 +294,7 @@ it handles different languages compared to OpenAI models.
 colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}"
 id="multilingual-test" outputId="e4934588-e027-4b75-8bfd-0d5c69b7b43f">
 
-``` python
+```python
 multilingual_prompts = {
     "Hindi": "भारत के पांच प्रमुख पर्यटन स्थलों के बारे में बताएं।",  # Tell me about five major tourist places in India
     "Spanish": "Explica la importancia de la diversidad cultural en la sociedad moderna.",  # Explain the importance of cultural diversity in modern society
@@ -304,8 +311,6 @@ for language, prompt in multilingual_prompts.items():
     multilingual_results.append(result)
 ```
 
-
-
 </div>
 
 <div class="cell markdown" id="code-generation">
@@ -321,7 +326,7 @@ colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&qu
 id="code-generation-test"
 outputId="879fdf27-6c0c-4dbc-899d-4fe834059fa6">
 
-``` python
+```python
 code_prompts = [
     "Write a Python function to check if a string is a palindrome.",
     "Create a JavaScript function that sorts an array of objects by a specific property."
@@ -333,8 +338,6 @@ for prompt in code_prompts:
     result = compare_responses(prompt)
     code_results.append(result)
 ```
-
-
 
 </div>
 
@@ -351,7 +354,7 @@ colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&qu
 id="creative-writing-test"
 outputId="70fa74fa-7c2d-4708-9e38-2fa03b83515e">
 
-``` python
+```python
 creative_prompts = [
     "Write a short poem about the changing seasons.",
     "Create a brief story about a traveler who discovers a hidden village in the mountains."
@@ -363,8 +366,6 @@ for prompt in creative_prompts:
     result = compare_responses(prompt, temperature=0.7)  # Higher temperature for creativity
     creative_results.append(result)
 ```
-
-
 
 </div>
 
@@ -380,7 +381,7 @@ Let's compare how both models handle complex reasoning tasks.
 colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&quot;:1000}"
 id="reasoning-test" outputId="0ec77123-827b-44a0-de37-75bf06065736">
 
-``` python
+```python
 reasoning_prompts = [
     "A ball and a bat cost $1.10 in total. The bat costs $1.00 more than the ball. How much does the ball cost?",
     "If it takes 5 machines 5 minutes to make 5 widgets, how long would it take 100 machines to make 100 widgets?"
@@ -392,8 +393,6 @@ for prompt in reasoning_prompts:
     result = compare_responses(prompt)
     reasoning_results.append(result)
 ```
-
-
 
 </div>
 
@@ -410,7 +409,7 @@ colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&qu
 id="performance-visualization"
 outputId="97925e09-0f9c-4ae9-86c8-dabb41af83d3">
 
-``` python
+```python
 # Combine all results
 all_results = (
     general_knowledge_results +
@@ -472,10 +471,6 @@ plt.tight_layout()
 plt.show()
 ```
 
-
-
-
-
 </div>
 
 <div class="cell markdown" id="response-length">
@@ -491,7 +486,7 @@ colab="{&quot;base_uri&quot;:&quot;https://localhost:8080/&quot;,&quot;height&qu
 id="length-visualization"
 outputId="11f4d94c-2a70-4fac-a8e4-1243755e391c">
 
-``` python
+```python
 # Extract response length data
 length_data = []
 for result in all_results:
@@ -533,7 +528,6 @@ plt.xticks(rotation=45)
 plt.tight_layout()
 plt.show()
 ```
-
 
 </div>
 

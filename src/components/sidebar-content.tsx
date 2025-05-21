@@ -236,12 +236,17 @@ export const cookbooks: Content[] = [
       },
       {
         title: "Sutra with Agno",
-        href: "/docs/cookbooks/agno",
+        href: "/docs/cookbooks/sutra-with-agno",
         icon: Icons.book,
       },
       {
         title: "Sutra with LangChain",
         href: "/docs/cookbooks/sutra-with-langchain",
+        icon: Icons.book,
+      },
+      {
+        title: "Sutra with LlamaIndex",
+        href: "/docs/cookbooks/sutra-with-llamaindex",
         icon: Icons.book,
       },
     ],
