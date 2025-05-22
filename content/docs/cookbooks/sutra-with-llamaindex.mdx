@@ -40,16 +40,16 @@ os.environ["SUTRA_API_KEY"] = userdata.get("SUTRA_API_KEY")
 os.environ["OPENAI_API_KEY"] = userdata.get("OPENAI_API_KEY")
 ```
 
-### Initialize Sutra Model via LlamaIndex 🦙:
+### Initialize SUTRA Model via LlamaIndex 🦙:
 
 ```python
 import os
 from llama_index.llms.openai_like import OpenAILike
 
-# Initialize Sutra as an OpenAI-compatible LLM
+# Initialize SUTRA as an OpenAI-compatible LLM
 llm = OpenAILike(
     model="sutra-v2",                             # Model name
-    api_base="https://api.two.ai/v2",            # Sutra API base
+    api_base="https://api.two.ai/v2",            # SUTRA API base
     api_key=os.getenv("SUTRA_API_KEY"),          # API Key from environment
     is_chat_model=True                           # Set True for chat-based models
 )
@@ -70,11 +70,11 @@ print(response.text)
 ```python
 from llama_index.llms.openai_like import OpenAILike
 
-# Initialize Sutra LLM with necessary parameters
+# Initialize SUTRA LLM with necessary parameters
 llm = OpenAILike(
-    model="sutra-v2",                    # Sutra model name
-    api_base="https://api.two.ai/v2",    # Sutra API base URL
-    api_key=os.getenv("SUTRA_API_KEY"),  # Sutra API key
+    model="sutra-v2",                    # SUTRA model name
+    api_base="https://api.two.ai/v2",    # SUTRA API base URL
+    api_key=os.getenv("SUTRA_API_KEY"),  # SUTRA API key
     is_chat_model=True,                  # Mandatory: Set to True for chat-based models
 )
 
@@ -102,11 +102,11 @@ from llama_index.llms.openai_like import OpenAILike
 from llama_index.core.llms import ChatMessage
 
 
-# Initialize the Sutra model via LlamaIndex
+# Initialize the SUTRA model via LlamaIndex
 llm = OpenAILike(
-    model="sutra-v2",                    # Sutra model name
-    api_base="https://api.two.ai/v2",    # Sutra API base URL
-    api_key=os.getenv("SUTRA_API_KEY"),  # Sutra API key
+    model="sutra-v2",                    # SUTRA model name
+    api_base="https://api.two.ai/v2",    # SUTRA API base URL
+    api_key=os.getenv("SUTRA_API_KEY"),  # SUTRA API key
     is_chat_model=True,                  # Mandatory for chat-based models
 )
 
@@ -125,7 +125,7 @@ while True:
     # Add user message to chat history
     chat_history.append(ChatMessage(role="user", content=user_input))
 
-    # Get response from Sutra via LlamaIndex
+    # Get response from SUTRA via LlamaIndex
     response = llm.chat(chat_history)
 
     # Print response content
@@ -142,7 +142,7 @@ while True:
     You: exit
     Chatbot: Goodbye! 👋
 
-### LlamaIndex 🦙 with the Sutra model for Document Querying
+### LlamaIndex 🦙 with the SUTRA model for Document Querying
 
 ```python
 import os
@@ -183,7 +183,7 @@ index = VectorStoreIndex.from_documents(
     storage_context=storage_context,
 )
 
-# 5. Set up Sutra LLM
+# 5. Set up SUTRA LLM
 sutra_llm = OpenAILike(
     model="sutra-v2",
     api_base="https://api.two.ai/v2",
@@ -191,7 +191,7 @@ sutra_llm = OpenAILike(
     is_chat_model=True,
 )
 
-# 6. Query the index using the Sutra LLM
+# 6. Query the index using the SUTRA LLM
 query_engine = index.as_query_engine(llm=sutra_llm)
 response = query_engine.query("SUTRA कितनी भाषाओं का समर्थन करता है?")
 
@@ -201,7 +201,7 @@ print("उत्तर:", response.response)
 
     उत्तर: SUTRA 50+ से अधिक भाषाओं का समर्थन करता है।
 
-###Multilingual Chat with Sutra LLM
+###Multilingual Chat with SUTRA LLM
 
 ```python
 # Step 1: Import dependencies
@@ -210,7 +210,7 @@ from IPython.display import display
 from llama_index.llms.openai_like import OpenAILike
 from llama_index.core.chat_engine import SimpleChatEngine
 
-# Step 2: Set up Sutra LLM
+# Step 2: Set up SUTRA LLM
 sutra_llm = OpenAILike(
     api_base="https://api.two.ai/v2",
     api_key=os.getenv("SUTRA_API_KEY"),
@@ -277,10 +277,10 @@ def on_send_click(b):
     messages.append(f"User: {user_text}")
     chat_log.value = '\n'.join(messages)
 
-    # Create prompt for Sutra LLM
+    # Create prompt for SUTRA LLM
     full_prompt = f"Please respond only in {language}. User: {user_text}\nAssistant:"
 
-    # Get response from Sutra LLM
+    # Get response from SUTRA LLM
     response = chat_engine.chat(full_prompt)
     assistant_reply = response.response.strip()
 

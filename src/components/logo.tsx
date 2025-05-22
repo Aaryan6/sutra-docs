@@ -6,7 +6,7 @@ export const Logo = (props: SVGProps<any>) => {
   return (
     <Image
       src="/sutra.png"
-      alt="Sutra Logo"
+      alt="SUTRA Logo"
       width={100}
       height={100}
       className="size-8 rounded-xl"

@@ -23,7 +23,7 @@ title: SUTRA
 
 ## Introduction
 
-This notebook provides a comparison between Sutra V2 and OpenAI models
+This notebook provides a comparison between SUTRA V2 and OpenAI models
 across various tasks and capabilities. By directly comparing these
 models, you can make informed decisions about which model best suits
 your specific use cases.
@@ -91,7 +91,7 @@ import html  # For escaping HTML entities
 
 ## Authentication
 
-To compare both models, we need to set up API keys for both Sutra and
+To compare both models, we need to set up API keys for both SUTRA and
 OpenAI.
 
 </div>
@@ -142,7 +142,7 @@ their responses.
 ```python
 def get_sutra_response(prompt, temperature=0, max_tokens=1024):
     """
-    Get a response from Sutra V2.
+    Get a response from SUTRA V2.
 
     Args:
         prompt (str): The user prompt or question
@@ -204,7 +204,7 @@ def get_openai_response(prompt, model="gpt-4o", temperature=0, max_tokens=1024):
 
 def compare_responses(prompt, openai_model="gpt-4o", temperature=0, max_tokens=1024):
     """
-    Compare responses from Sutra V2 and an OpenAI model.
+    Compare responses from SUTRA V2 and an OpenAI model.
 
     Args:
         prompt (str): The user prompt or question
@@ -227,7 +227,7 @@ def compare_responses(prompt, openai_model="gpt-4o", temperature=0, max_tokens=1
     display(HTML(f"<h3>Prompt:</h3><p>{html.escape(prompt)}</p>"))
 
     display(HTML(
-        f"<h4>Sutra V2 Response:</h4>"
+        f"<h4>SUTRA V2 Response:</h4>"
         f"<pre style='background-color:#f5f5f5; color:#000; padding:10px; border-radius:5px;'>{escaped_sutra_response}</pre>"
         f"<p><b>Time:</b> {sutra_time:.2f} seconds</p>"
     ))
@@ -242,8 +242,8 @@ def compare_responses(prompt, openai_model="gpt-4o", temperature=0, max_tokens=1
 
     return {
         "Prompt": prompt,
-        "Sutra Response": sutra_response,
-        "Sutra Time": sutra_time,
+        "SUTRA Response": sutra_response,
+        "SUTRA Time": sutra_time,
         "OpenAI Model": openai_model,
         "OpenAI Response": openai_response,
         "OpenAI Time": openai_time
@@ -285,7 +285,7 @@ for prompt in general_knowledge_prompts:
 
 ## Comparison 2: Multilingual Capabilities
 
-Sutra V2 is known for its multilingual capabilities. Let's compare how
+SUTRA V2 is known for its multilingual capabilities. Let's compare how
 it handles different languages compared to OpenAI models.
 
 </div>
@@ -432,8 +432,8 @@ for result in all_results:
                     "Creative Writing" if result in creative_results else
                     "Complex Reasoning",
         "Language": result["Language"],
-        "Model": "Sutra V2",
-        "Response Time": result["Sutra Time"]
+        "Model": "SUTRA V2",
+        "Response Time": result["SUTRA Time"]
     })
 
     timing_data.append({
@@ -500,8 +500,8 @@ for result in all_results:
                     "Creative Writing" if result in creative_results else
                     "Complex Reasoning",
         "Language": result["Language"],
-        "Model": "Sutra V2",
-        "Response Length": len(result["Sutra Response"])
+        "Model": "SUTRA V2",
+        "Response Length": len(result["SUTRA Response"])
     })
 
     length_data.append({
@@ -535,11 +535,11 @@ plt.show()
 
 ## Conclusion
 
-This notebook has provided a comparison between Sutra V2 and OpenAI
+This notebook has provided a comparison between SUTRA V2 and OpenAI
 models across various tasks and capabilities. Here are the key
 takeaways:
 
-1.  **Multilingual Capabilities**: Sutra V2 demonstrates exceptional
+1.  **Multilingual Capabilities**: SUTRA V2 demonstrates exceptional
     performance across a wide range of languages, particularly excelling
     in Indic and Far Eastern languages. This makes it an excellent
     choice for applications requiring multilingual support.
@@ -560,7 +560,7 @@ takeaways:
 
 4.  **Use Case Recommendations**:
 
-    - Choose Sutra V2 for applications requiring:
+    - Choose SUTRA V2 for applications requiring:
       - Broad multilingual support, especially for Indic and Far Eastern
         languages
       - Cost-efficient deployment at scale

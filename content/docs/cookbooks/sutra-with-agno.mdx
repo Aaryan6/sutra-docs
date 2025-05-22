@@ -32,7 +32,7 @@ Before you begin, make sure you have:
 
 This guide is designed to run in Google Colab, so no local Python installation is required.
 
-## Sutra using Agno
+## SUTRA using Agno
 
 ### Install Requirements
 
@@ -52,14 +52,14 @@ os.environ["TAVILY_API_KEY"] = userdata.get("TAVILY_API_KEY")
 os.environ["OPENAI_API_KEY"] = userdata.get("OPENAI_API_KEY")
 ```
 
-## Initialize Agent with Sutra Model
+## Initialize Agent with SUTRA Model
 
 ```python
 import os
 from agno.agent import Agent
 from agno.models.openai.like import OpenAILike
 
-# Initialize the Agent with Sutra model via OpenAILike wrapper
+# Initialize the Agent with SUTRA model via OpenAILike wrapper
 agent = Agent(
     model=OpenAILike(
         id="sutra-v2",
@@ -112,7 +112,7 @@ for prompt in prompts:
     print(f"\n📝 Prompt: {prompt}\n📘 Response: {response.content}\n")
 ```
 
-### Initialize Sutra Model and Start Chatbot Interaction
+### Initialize SUTRA Model and Start Chatbot Interaction
 
 ```python
 from agno.agent import Agent
@@ -139,7 +139,7 @@ while True:
     print("Bot:", response.content)
 ```
 
-### Initialize Agent with Sutra Model and Tavily Tool
+### Initialize Agent with SUTRA Model and Tavily Tool
 
 ```python
 import os
@@ -147,7 +147,7 @@ from agno.agent import Agent
 from agno.models.openai.like import OpenAILike
 from agno.tools.tavily import TavilyTools
 
-# Initialize the agent with Sutra model and Tavily tool
+# Initialize the agent with SUTRA model and Tavily tool
 agent = Agent(
     model=OpenAILike(
         id="sutra-v2",
@@ -169,7 +169,7 @@ response = agent.run("About SUTRA by TWO AI")
 print(response.content)
 ```
 
-### Agentic RAG with LanceDB using Sutra LLM in Agno Framework
+### Agentic RAG with LanceDB using SUTRA LLM in Agno Framework
 
 ```python
 import os
@@ -193,7 +193,7 @@ knowledge_base = PDFUrlKnowledgeBase(
 # Step 2: Load knowledge base (Run only once; comment in later runs)
 knowledge_base.load()
 
-# Step 3: Define the Agent using Sutra (OpenAI-compatible via OpenAILike)
+# Step 3: Define the Agent using SUTRA (OpenAI-compatible via OpenAILike)
 agent = Agent(
     model=OpenAILike(
         id="sutra-v2",
