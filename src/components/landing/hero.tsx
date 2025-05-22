@@ -25,7 +25,12 @@ client = OpenAI(
  
 stream = client.chat.completions.create(
     model='sutra-v2',
-    messages=[{"role": "user", "content": "Tell me a story about space exploration"}],
+    messages=[
+      {
+      "role": "user", 
+      "content": "Tell me a story about space exploration"
+      }
+    ],
     stream=True
 )`,
   },
@@ -41,7 +46,12 @@ async function streamSutra() {
  
   const stream = await client.chat.completions.create({
     model: "sutra-v2",
-    messages: [{ role: "user", content: "Tell me a story about space exploration" }],
+    messages: [
+      { 
+        role: "user", 
+        content: "Tell me a story about space exploration"
+      }
+     ],
     stream: true,
   });`,
   },
@@ -223,7 +233,7 @@ function CodePreview() {
                         className={clsx(className, "flex overflow-x-auto pb-6")}
                         style={style}
                       >
-                        <code className="px-4">
+                        <code className="px-4 overflow-x-auto">
                           {tokens.map((line, lineIndex) => (
                             <div key={lineIndex} {...getLineProps({ line })}>
                               {line.map((token, tokenIndex) => (

@@ -1,4 +1,4 @@
-import { source } from "@/lib/source";
+import { openapi, source } from "@/lib/source";
 import { DocsPage, DocsBody, DocsTitle } from "fumadocs-ui/page";
 import { notFound } from "next/navigation";
 import { absoluteUrl } from "@/lib/utils";
@@ -22,6 +22,7 @@ import { Endpoint } from "@/components/endpoint";
 import { DividerText } from "@/components/divider-text";
 import { ResourceCard } from "@/components/resource-card";
 import { ResourceGrid } from "@/components/resource-grid";
+import { APIPage } from "fumadocs-openapi/ui";
 
 export default async function Page({
   params,
@@ -44,8 +45,8 @@ export default async function Page({
       toc={page.data.toc}
       full={page.data.full}
       editOnGithub={{
-        owner: "better-auth",
-        repo: "better-auth",
+        owner: "sutra",
+        repo: "sutra",
         sha: "main",
         path: `/docs/content/docs/${page.file.path}`,
       }}
@@ -75,6 +76,7 @@ export default async function Page({
                 {...props}
               />
             ),
+            APIPage: (props) => <APIPage {...openapi.getAPIPageProps(props)} />,
             Step,
             Steps,
             File,
