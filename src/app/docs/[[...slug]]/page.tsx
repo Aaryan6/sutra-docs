@@ -20,8 +20,14 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { contents } from "@/components/sidebar-content";
 import { Endpoint } from "@/components/endpoint";
 import { DividerText } from "@/components/divider-text";
-import { ResourceCard } from "@/components/resource-card";
-import { ResourceGrid } from "@/components/resource-grid";
+import {
+  ResourceCard,
+  ResourceCardWithTwoLinks,
+} from "@/components/resource-card";
+import {
+  ResourceGrid,
+  ResourceGridWithTwoLinks,
+} from "@/components/resource-grid";
 import { APIPage } from "fumadocs-openapi/ui";
 
 export default async function Page({
@@ -92,6 +98,8 @@ export default async function Page({
             DatabaseTable,
             Accordion,
             ResourceCard,
+            ResourceGridWithTwoLinks,
+            ResourceCardWithTwoLinks,
             ResourceGrid,
             Accordions,
             Endpoint,

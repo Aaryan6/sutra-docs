@@ -55,3 +55,55 @@ export function ResourceCard({
     </div>
   );
 }
+
+interface ResourceCardWithTwoLinksProps {
+  title: string;
+  description: string;
+  href?: {
+    label: string;
+    href: string;
+  }[];
+  className?: string;
+}
+
+export function ResourceCardWithTwoLinks({
+  title,
+  description,
+  href,
+  className,
+}: ResourceCardWithTwoLinksProps) {
+  return (
+    <div
+      className={cn(
+        "relative flex justify-between rounded-none flex-col group space-y-1 border",
+        className
+      )}
+    >
+      <div>
+        <div className="p-4 py-0 flex items-start justify-between">
+          <h3 className="font-semibold tracking-tight no-underline">{title}</h3>
+        </div>
+        <p
+          dangerouslySetInnerHTML={{ __html: `${description}` }}
+          className="p-4 py-0 text-sm md:decoration-none text-muted-foreground"
+        ></p>
+      </div>
+      <div>
+        {href && href.length > 0 && (
+          <div className="border-zinc-700/80 border-t-[1.2px] divide-x grid grid-cols-2">
+            {href?.map((link) => (
+              <Link
+                href={link.href}
+                key={link.href}
+                target={link.href.includes("http") ? "_blank" : "_self"}
+                className="text-sm w-full text-center p-3 hover:bg-muted/80 transition-colors"
+              >
+                {link.label}
+              </Link>
+            ))}
+          </div>
+        )}
+      </div>
+    </div>
+  );
+}
