@@ -12,48 +12,42 @@ import { AnimatePresence, motion, MotionConfig } from "framer-motion";
 import { Builder } from "../builder";
 import { Spotlight } from "./spotlight";
 import { GradientBG } from "./gradient-bg";
+
 const tabs: { name: "main.py" | "index.ts"; code: string }[] = [
   {
     name: "main.py",
     code: `import os
 from openai import OpenAI
- 
 client = OpenAI(
-    base_url="https://api.two.ai/v2",
-    api_key=os.environ.get("SUTRA_API_KEY")
+    api_key=os.getenv("SUTRA_API_KEY", "YOUR_SUTRA_API_KEY"),
+    base_url="https://api.two.ai/v2"
 )
- 
-stream = client.chat.completions.create(
-    model='sutra-v2',
-    messages=[
-      {
-      "role": "user", 
-      "content": "Tell me a story about space exploration"
-      }
-    ],
-    stream=True
-)`,
+response = client.chat.completions.create(
+    model="sutra-v2",
+    messages=[{"role": "user", "content": "Tell me about Mars exploration in three sentences."}],
+    max_tokens=1024,
+    temperature=0.7
+)
+print(response.choices[0].message.content)`,
   },
   {
     name: "index.ts",
     code: `import { OpenAI } from "openai";
- 
-async function streamSutra() {
-  const client = new OpenAI({
-    apiKey: process.env.SUTRA_API_KEY,
-    baseURL: "https://api.two.ai/v2",
-  });
- 
-  const stream = await client.chat.completions.create({
-    model: "sutra-v2",
-    messages: [
-      { 
-        role: "user", 
-        content: "Tell me a story about space exploration"
-      }
-     ],
-    stream: true,
-  });`,
+async function main() {
+    const client = new OpenAI({
+        apiKey: process.env.SUTRA_API_KEY || "YOUR_SUTRA_API_KEY",
+        baseURL: "https://api.two.ai/v2"
+    });
+    const response = await client.chat.completions.create({
+        model: "sutra-v2",
+        messages: [{ role: "user", content: "Tell me about Mars exploration in three sentences." }],
+        max_tokens: 1024,
+        temperature: 0.7
+    });
+    console.log(response.choices[0].message.content);
+}
+main();
+  }`,
   },
 ];
 
@@ -196,7 +190,7 @@ function CodePreview() {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.5 }}
                   key={currentTab}
-                  className="relative flex items-start px-1 text-sm"
+                  className="relative flex items-start px-1 text-sm w-full overflow-x-auto"
                 >
                   <div
                     aria-hidden="true"
@@ -233,7 +227,7 @@ function CodePreview() {
                         className={clsx(className, "flex overflow-x-auto pb-6")}
                         style={style}
                       >
-                        <code className="px-4 overflow-x-auto">
+                        <code className="px-4 min-w-full whitespace-pre">
                           {tokens.map((line, lineIndex) => (
                             <div key={lineIndex} {...getLineProps({ line })}>
                               {line.map((token, tokenIndex) => (
